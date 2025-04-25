@@ -29,9 +29,9 @@ document.getElementById('facturaForm').addEventListener('submit', function(e) {
     let montoTotal = 0;
     reserva.condiciones.forEach(condicion => {
         if (condicion === "niño" || condicion === "adultoMayor") {
-            montoTotal += 15; // Precio especial para niños y adultos mayores
+            montoTotal += 2500; // Precio especial para niños y adultos mayores
         } else {
-            montoTotal += 30; // Precio normal para adultos
+            montoTotal += 4000; // Precio normal para adultos
         }
     });
 
