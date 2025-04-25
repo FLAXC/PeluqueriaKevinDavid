@@ -29,15 +29,15 @@ function generarInformePersonasAtendidas() {
 function generarInformeDineroGenerado() {
     const facturaciones = obtenerFacturaciones();
     const resultados = {
-        "adultos": 0,
-        "niños": 0,
-        "adultosMayores": 0
+        "adultos": "₡" +  0,
+        "niños": "₡" + 0,
+        "adultosMayores": "₡" + 0
     };
 
     facturaciones.forEach(factura => {
         factura.condiciones.forEach(cond => {
-            if (cond === "adulto") resultados.adultos += 30;
-            else if (cond === "niño" || cond === "adultoMayor") resultados.niños += 15;
+            if (cond === "adulto") resultados.adultos += 4000;
+            else if (cond === "niño" || cond === "adultoMayor") resultados.niños += 2500;
         });
     });
 
