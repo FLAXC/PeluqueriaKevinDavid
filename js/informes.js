@@ -29,9 +29,9 @@ function generarInformePersonasAtendidas() {
 function generarInformeDineroGenerado() {
     const facturaciones = obtenerFacturaciones();
     const resultados = {
-        "adultos": "₡" +  0,
-        "niños": "₡" + 0,
-        "adultosMayores": "₡" + 0
+        "adultos": 0,
+        "niños": 0,
+        "adultosMayores": 0
     };
 
     facturaciones.forEach(factura => {
