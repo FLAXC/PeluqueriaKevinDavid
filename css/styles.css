@@ -1,0 +1,184 @@
+/* Estilo para el menú lateral */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    position: relative; /* Añadimos esto para que el posicionamiento de los elementos sea relativo al cuerpo */
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #042342;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10; /* Aseguramos que el menú tiene un z-index mayor que el contenido */
+}
+/* Estilos para el logo en el menú lateral */
+.sidebar .logo {
+    width: 50%; /* Ajusta el tamaño del logo */
+    max-width: 200px; /* Tamaño máximo del logo */
+    display: block;
+    margin: 20px auto; /* Centrar el logo en el menú */
+    padding-bottom: 20px; /* Espacio debajo del logo */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #3498db;
+}
+
+.container {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    padding: 20px;
+}
+
+.container h2 {
+    color: #333;
+}
+
+/* Estilo para el botón que muestra y oculta el menú */
+.toggle-btn {
+    position: fixed; /* Asegura que el botón esté fijado en la pantalla */
+    top: 20px;
+    left: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 20; /* Lo posicionamos encima de todo */
+}
+
+.toggle-btn:hover {
+    background-color: #2980b9;
+}
+
+
+#horario, #empleado {
+    display: block; /* Asegura que se muestren en bloque, uno debajo del otro */
+    margin-bottom: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilo básico para los campos select */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de enfoque (focus) en el select */
+select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Aplica solo al login usando .login-container como raíz */
+
+body.login-body {
+    background: linear-gradient(to right, #0d50a7, #ACB6E5);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin: 10px 0 5px;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #0d50a7;
+    outline: none;
+}
+
+.login-container button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #0d50a7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #0d50a7;
+}
+
+.login-container .error {
+    color: red;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
