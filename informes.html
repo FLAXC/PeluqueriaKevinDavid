@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes de la Peluquería</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+            <!-- Botón para mostrar u ocultar el menú lateral -->
+            <button id="toggleMenu" class="toggle-btn">☰</button>
+            <!-- Menú Lateral -->
+            <div class="sidebar">
+                <h2></h2>
+                <img src="logo.png" alt="Logo de la peluquería" class="logo">
+                <h2>Menú</h2>
+                <a href="empleados.html"><i class="fas fa-user-tie module-icon"></i>Módulo de Empleados</a>
+                <a href="clientes.html"><i class="fas fa-users module-icon"></i>Módulo de Clientes</a>
+                <a href="reservas.html"><i class="fas fa-calendar-check module-icon"></i>Módulo de Reservas</a>
+                <a href="facturacion.html"><i class="fas fa-file-invoice module-icon"></i>Módulo de Facturación</a>
+                <a href="informes.html"><i class="fas fa-chart-line module-icon"></i>Módulo de Informes</a>
+            </div>
+    <div class="container">
+        <h2>Informes de la Peluquería</h2>
+
+        <button onclick="generarInformePersonasAtendidas()">Cantidad de Personas Atendidas</button>
+        <button onclick="generarInformeDineroGenerado()">Cantidad de Dinero Generado</button>
+        <button onclick="generarInformeAfiliacionHorarios()">Horarios de Mayor y Menor Afluencia</button>
+
+        <div id="informesResultado"></div>
+
+        <button onclick="window.location.href='dashboard.html'">⬅ Volver al inicio</button>
+    </div>
+
+    <script src="js/informes.js"></script>
+    <script>
+        // Función para alternar la visibilidad del menú lateral
+        document.getElementById('toggleMenu').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

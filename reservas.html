@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Reservas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+            <!-- Botón para mostrar u ocultar el menú lateral -->
+            <button id="toggleMenu" class="toggle-btn">☰</button>
+            <!-- Menú Lateral -->
+            <div class="sidebar">
+                <h2></h2>
+                <img src="logo.png" alt="Logo de la peluquería" class="logo">
+                <h2>Menú</h2>
+                <a href="empleados.html"><i class="fas fa-user-tie module-icon"></i>Módulo de Empleados</a>
+                <a href="clientes.html"><i class="fas fa-users module-icon"></i>Módulo de Clientes</a>
+                <a href="reservas.html"><i class="fas fa-calendar-check module-icon"></i>Módulo de Reservas</a>
+                <a href="facturacion.html"><i class="fas fa-file-invoice module-icon"></i>Módulo de Facturación</a>
+                <a href="informes.html"><i class="fas fa-chart-line module-icon"></i>Módulo de Informes</a>
+            </div>
+    <div class="container">
+        <h2>Módulo de Reservas</h2>
+
+        <form id="reservaForm">
+            <select id="nombreClienteReserva" required>
+                <option value="">Seleccione un cliente</option>
+            </select>
+            <input type="text" id="cedulaClienteReserva" placeholder="Cédula del Cliente" required readonly>
+            <input type="number" id="cantidadPersonas" placeholder="Cantidad de personas" min="1" max="3" value="1" required>
+
+            <div id="condicionesContainer"></div>
+            <h1></h1>
+            <label for="horario">Seleccione un horario:</label>
+            <select id="horario" required></select>
+
+            <label for="empleado">Empleado que atenderá:</label>
+            <select id="empleado" required></select>
+
+            <button type="submit">Reservar</button>
+        </form>
+
+        <h3>Reservaciones Realizadas</h3>
+        <table id="tablaReservas">
+            <thead>
+                <tr>
+                    <th>Reserva</th>
+                    <th>Cliente</th>
+                    <th>Horario</th>
+                    <th>Empleado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas de las reservas se agregarán aquí dinámicamente -->
+            </tbody>
+        </table>
+
+        <button onclick="window.location.href='dashboard.html'">⬅ Volver al inicio</button>
+    </div>
+
+    <script src="js/reservas.js"></script>
+    <script>
+        // Función para alternar la visibilidad del menú lateral
+        document.getElementById('toggleMenu').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('hidden');
+        });
+        document.getElementById('cantidadPersonas').addEventListener('input', generarCondiciones);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Facturación</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+            <!-- Botón para mostrar u ocultar el menú lateral -->
+            <button id="toggleMenu" class="toggle-btn">☰</button>
+            <!-- Menú Lateral -->
+            <div class="sidebar">
+                <h2></h2>
+                <img src="logo.png" alt="Logo de la peluquería" class="logo">
+                <h2>Menú</h2>
+                <a href="empleados.html"><i class="fas fa-user-tie module-icon"></i>Módulo de Empleados</a>
+                <a href="clientes.html"><i class="fas fa-users module-icon"></i>Módulo de Clientes</a>
+                <a href="reservas.html"><i class="fas fa-calendar-check module-icon"></i>Módulo de Reservas</a>
+                <a href="facturacion.html"><i class="fas fa-file-invoice module-icon"></i>Módulo de Facturación</a>
+                <a href="informes.html"><i class="fas fa-chart-line module-icon"></i>Módulo de Informes</a>
+            </div>
+    <div class="container">
+        <h2>Módulo de Facturación</h2>
+
+        <form id="facturaForm">
+            <select id="nombreClienteReserva" required></select>
+            </select>
+            <input type="text" id="cedulaClienteReserva" placeholder="Cédula del Cliente" required readonly>
+
+            <select id="numeroReservaSelec" required></select>
+            <input type="number" id="numeroReserva" placeholder="Número de Reserva" required>
+
+        </select>
+
+            <button type="submit">Generar Factura</button>
+        </form>
+
+        <h3>Factura Generada</h3>
+        <div id="facturaDetalle" style="display: none;">
+            <p><strong>Cliente:</strong> <span id="facturaCliente"></span></p>
+            <p><strong>Número de Reserva:</strong> <span id="facturaNumeroReserva"></span></p>
+            <p><strong>Empleados Atendidos:</strong> <span id="facturaEmpleado"></span></p>
+            <p><strong>Monto Total:</strong> $<span id="facturaMontoTotal"></span></p>
+            <p><strong>Condiciones:</strong> <span id="facturaCondiciones"></span></p>
+        </div>
+        <button id="btnImprimirFactura" style="display: none;">Imprimir Factura</button>
+        <h1></h1>
+        <button onclick="window.location.href='dashboard.html'">⬅ Volver al inicio</button>
+    </div>
+
+    <script src="js/facturacion.js"></script>
+    <script>
+        // Función para alternar la visibilidad del menú lateral
+        document.getElementById('toggleMenu').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

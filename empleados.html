@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Empleados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+        <!-- Botón para mostrar u ocultar el menú lateral -->
+        <button id="toggleMenu" class="toggle-btn">☰</button>
+        <!-- Menú Lateral -->
+        <div class="sidebar">
+            <h2></h2>
+            <img src="logo.png" alt="Logo de la peluquería" class="logo">
+            <h2>Menú</h2>
+            <a href="empleados.html"><i class="fas fa-user-tie module-icon"></i>Módulo de Empleados</a>
+            <a href="clientes.html"><i class="fas fa-users module-icon"></i>Módulo de Clientes</a>
+            <a href="reservas.html"><i class="fas fa-calendar-check module-icon"></i>Módulo de Reservas</a>
+            <a href="facturacion.html"><i class="fas fa-file-invoice module-icon"></i>Módulo de Facturación</a>
+            <a href="informes.html"><i class="fas fa-chart-line module-icon"></i>Módulo de Informes</a>
+        </div>
+    <div class="container">
+        <h2>Módulo de Empleados</h2>
+
+        <form id="empleadoForm">
+            <input type="text" id="cedula" placeholder="Cédula" required pattern="^(\d{9}|\d{12})$" minlength="9" maxlength="12" title="Formato válido: 123456789 o 123456789123">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="direccion" placeholder="Dirección" required>
+            <input type="text" id="telefono" placeholder="Teléfono" required pattern="^(P\d{9}|\d{8})$" inputmode="numeric" min="8" max="8" title="El número de telefono tiene que ser de 8 números"> 
+            <input type="email" id="correo" placeholder="Correo" required>
+            <input type="number" id="comision" placeholder="Comisión (%)" required step="0.01" min="0" max="100">
+            <button type="submit">Agregar / Actualizar Empleado</button>
+        </form>
+
+        <h3>Lista de Empleados</h3>
+        <table id="tablaEmpleados">
+            <thead>
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Comisión</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button onclick="window.location.href='dashboard.html'">⬅ Volver al inicio</button>
+    </div>
+
+    <script src="js/empleados.js"></script>
+</body>
+</html>
